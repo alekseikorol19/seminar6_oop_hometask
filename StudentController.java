@@ -6,6 +6,7 @@ public class StudentController implements UserController<Student>{
 
     StudentGroup students = new StudentGroup(new ArrayList<>());
     UserView<Student> userView = new UserView<Student>(); 
+    StudentPrinter sprinter = new StudentPrinter();
 
     @Override
     public void create(String fristName, String secondName, String lastName) {
@@ -19,8 +20,8 @@ public class StudentController implements UserController<Student>{
         students.addStudent(student);
     }
 
-    void printStudentList () {
-        userView.sendOnConsole(students.getStudentList());
+    public void printStudentList () {
+        sprinter.printStudentList();
     }
     
 }
